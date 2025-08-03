@@ -1,6 +1,7 @@
 package com.project.queueapp.controller;
 
 
+import com.project.queueapp.dto.CustomerLoginRequest;
 import com.project.queueapp.dto.CustomerSignupRequest;
 import com.project.queueapp.model.Customer;
 import com.project.queueapp.service.CustomerService;
@@ -18,4 +19,11 @@ public class CustomerController {
     public Customer signup(@RequestBody CustomerSignupRequest request) {
         return customerService.register(request);
     }
+
+    @PostMapping("/login")
+    public String login(@RequestBody CustomerLoginRequest request) {
+        return customerService.login(request);
+    }
+
+
 }
